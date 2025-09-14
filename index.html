@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TVK Mica</title>
+</head>
+<body>
+  <header class="header">
+    <h1>TVK Mica</h1>
+    <nav>
+      <a href="cont.html">About</a>
+        </nav>
+        <style>
+          .header nav {
+            display: flex;
+            align-items: center;
+          }
+          .header nav a {
+            color: #fff;
+            margin-left: 1rem;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
+          }
+          .header nav a:hover {
+            background: #fff;
+            color: #333;
+            text-decoration: underline;
+          }
+        </style>
+    <div id="zoomModal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;z-index:9999;">
+      <img id="zoomImg" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 2px 20px rgba(0,0,0,0.5);">
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const modal = document.getElementById("zoomModal");
+        const zoomImg = document.getElementById("zoomImg");
+        document.getElementById("productGrid").addEventListener("click", function(e) {
+          if (e.target.tagName === "IMG") {
+            zoomImg.src = e.target.src;
+            zoomImg.alt = e.target.alt;
+            modal.style.display = "flex";
+          }
+        });
+        modal.addEventListener("click", function() {
+          modal.style.display = "none";
+          zoomImg.src = "";
+        });
+      });
+    </script>
+  </header>
+
+  <main class="container">
+    <section class="grid" id="productGrid"></section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 TVK Mica. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    overflow-x: auto;
+}
+
+.grid {
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.header {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header nav a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+.footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+</style>
+<script>
+const products = [
+  { id: 1, name: "4163 Corona Green", image: "1.jpg" },
+  { id: 2, name: "4162 Corona Blue", image: "2.jpg" },
+  { id: 3, name: "4141 Desert Pine II", image: "3.jpg" },
+  { id: 4, name: "4140 Desert Pine I", image: "4.jpg" },
+  { id: 5, name: "Product 5", image: "5.jpg" },
+  { id: 6, name: "Product 6", image: "6.jpg"},
+  { id: 7, name: "Product 7", image: "7.jpg" },
+  { id: 8, name: "Product 8", image: "8.jpg" },
+  { id: 9, name: "Product 9", image: "9.jpg" },
+  { id: 10, name: "Product 10", image: "10.jpg" },
+  { id: 11, name: "Product 11", image: "11.jpg" },
+  { id: 12, name: "Product 12", image: "12.jpg" },
+  { id: 13, name: "Product 13", image: "13.jpg" },
+  { id: 14, name: "Product 14", image: "14.jpg" },
+  { id: 15, name: "Product 15", image: "15.jpg" },
+  { id: 16, name: "Product 16", image: "16.jpg" },
+  { id: 17, name: "Product 17", image: "17.jpg" },
+  { id: 18, name: "Product 18", image: "18.jpg" },
+  { id: 19, name: "Product 19", image: "19.jpg" },
+  { id: 20, name: "Product 20", image: "20.jpg" },
+  { id: 21, name: "Product 21", image: "21.jpg" },
+  { id: 22, name: "Product 22", image: "22.jpg" },
+  { id: 23, name: "Product 23", image: "23.jpg" },
+  { id: 24, name: "Product 24", image: "24.jpg" },
+  { id: 25, name: "Product 25", image: "25.jpg" },
+  { id: 26, name: "Product 26", image: "26.jpg" },
+  { id: 27, name: "Product 27", image: "27.jpg" },
+  { id: 28, name: "Product 28", image: "28.jpg" },
+  { id: 29, name: "Product 29", image: "29.jpg" },
+  { id: 30, name: "Product 30", image: "30.jpg" },
+  { id: 31, name: "Product 31", image: "31.jpg" },
+  { id: 32, name: "Product 32", image: "32.jpg" },
+  { id: 33, name: "Product 33", image: "33.jpg" },
+  { id: 34, name: "Product 34", image: "34.jpg" },
+  { id: 35, name: "Product 35", image: "35.jpg" },
+  { id: 36, name: "Product 36", image: "36.jpg" },
+  { id: 37, name: "Product 37", image: "37.jpg" },
+  { id: 38, name: "Product 38", image: "38.jpg" },
+  { id: 39, name: "Product 39", image: "39.jpg" },
+  { id: 40, name: "Product 40", image: "40.jpg" },
+  { id: 41, name: "Product 41", image: "41.jpg" },
+  { id: 42, name: "Product 42", image: "42.jpg" },
+  { id: 43, name: "Product 43", image: "43.jpg" }
+];
+
+const grid = document.getElementById("productGrid");
+
+products.forEach(product => {
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.innerHTML = `
+    <img src="${product.image}" alt="${product.name}">
+    <h3>${product.name}</h3>
+  `;
+  grid.appendChild(card);
+});
+</script>
